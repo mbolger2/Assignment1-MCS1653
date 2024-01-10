@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - ConveyorBlock
   layers:
   - Default
   - TransparentFX

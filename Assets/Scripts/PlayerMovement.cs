@@ -50,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor" || 
+            collision.gameObject.tag == "ConveyorBlock")
         {
             jumpCharge = 1;
         }
