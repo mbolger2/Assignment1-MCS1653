@@ -14,10 +14,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Force fo the Jump")]
     public float jumpForce;
 
+    [Header("Jump Charge")]
+    public int jumpCharge;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+
+        jumpCharge = 0;
     }
 
     // Update is called once per frame
@@ -35,9 +40,19 @@ public class PlayerMovement : MonoBehaviour
         transform.position = finalPos;
 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && jumpCharge == 1)
         {
             rb.AddForce(Vector2.up * jumpForce * 100);
+
+            jumpCharge--;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            jumpCharge = 1;
         }
     }
 }
