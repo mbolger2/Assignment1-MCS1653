@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Floor
   - ConveyorBlock
+  - Spikes
+  - HealthPickup
+  - KeyPickup
   layers:
   - Default
   - TransparentFX
