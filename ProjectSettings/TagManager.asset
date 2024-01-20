@@ -9,6 +9,7 @@ TagManager:
   - Spikes
   - HealthPickup
   - KeyPickup
+  - Door
   layers:
   - Default
   - TransparentFX

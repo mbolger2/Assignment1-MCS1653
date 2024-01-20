@@ -69,7 +69,10 @@ public class PlayerMovement : MonoBehaviour
             hasKey = true;
             collision.gameObject.SetActive(false);
         }
+    }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Door" && hasKey)
         {
             SceneManager.LoadScene("winScene");
