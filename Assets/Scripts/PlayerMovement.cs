@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Does the Player have the Key?")]
     public bool hasKey = false;
 
+    [Header("Key Image")]
+    public GameObject keyImage;
+
+    [Header("Particle System")]
+    public ParticleSystem dustPS;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +56,18 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * 100);
 
             jumpCharge--;
+
+            CreateDust();
+        }
+
+        // Handles the key inventory
+        if (hasKey)
+        {
+            keyImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            keyImage.gameObject.SetActive(false);
         }
     }
 
@@ -61,7 +80,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCharge = 1;
         }
+    }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         // If the player picks up the key they now
         // have the key and the key despawns
         if (collision.gameObject.tag == "KeyPickup")
@@ -69,13 +91,17 @@ public class PlayerMovement : MonoBehaviour
             hasKey = true;
             collision.gameObject.SetActive(false);
         }
-    }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
+        // The player has the key and enters the ending door
         if (collision.gameObject.tag == "Door" && hasKey)
         {
-            SceneManager.LoadScene("winScene");
+            SceneManager.LoadScene("winMenu");
         }
+    }
+
+    // Plays the particle system
+    void CreateDust()
+    {
+        dustPS.Play();
     }
 }
