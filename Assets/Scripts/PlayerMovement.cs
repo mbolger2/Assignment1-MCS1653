@@ -28,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Particle System")]
     public ParticleSystem dustPS;
+
+    [Header("Jump Audio")]
+    public AudioClip jumpSound;
+    public AudioSource jumpSoundSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * 100);
 
             jumpCharge--;
-
+            PlayAudio();
             CreateDust();
         }
 
@@ -103,5 +108,11 @@ public class PlayerMovement : MonoBehaviour
     void CreateDust()
     {
         dustPS.Play();
+    }
+
+    // Plays the audio clip
+    void PlayAudio()
+    {
+        jumpSoundSource.PlayOneShot(jumpSound);
     }
 }
