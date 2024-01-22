@@ -550,6 +550,7 @@ GameObject:
   - component: {fileID: 460173147}
   - component: {fileID: 460173146}
   - component: {fileID: 460173148}
+  - component: {fileID: 460173149}
   m_Layer: 0
   m_Name: KeyPickup
   m_TagString: KeyPickup
@@ -709,6 +710,27 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!95 &460173149
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460173144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffbe37279a07d0a438ebfb048123631b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &464926674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,9 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ef6d80edc7ad6478d8158b5f836e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockHealth: 2
-  fullBlock: {fileID: -2050872413, guid: c3956f7881151fc4895583cc7e6acac3, type: 3}
-  crackedBlock: {fileID: -1516554471, guid: c3956f7881151fc4895583cc7e6acac3, type: 3}
 --- !u!19719996 &529463402
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -15420,6 +15439,7 @@ GameObject:
   - component: {fileID: 1902111648}
   - component: {fileID: 1902111647}
   - component: {fileID: 1902111649}
+  - component: {fileID: 1902111650}
   m_Layer: 0
   m_Name: HeartPickup
   m_TagString: HealthPickup
@@ -15583,6 +15603,27 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!95 &1902111650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902111645}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffbe37279a07d0a438ebfb048123631b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1922652614
 GameObject:
   m_ObjectHideFlags: 0
