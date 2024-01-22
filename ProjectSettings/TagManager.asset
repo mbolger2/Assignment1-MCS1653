@@ -50,3 +50,9 @@ TagManager:
   - name: Player
     uniqueID: 2845253375
     locked: 0
+  - name: secretroom
+    uniqueID: 3815294243
+    locked: 0
+  - name: pickups
+    uniqueID: 2776901383
+    locked: 0
