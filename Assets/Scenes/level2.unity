@@ -299,6 +299,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5330305492485369739, guid: 9650fc8632d5f0541831988265ad8a2b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330305492485369739, guid: 9650fc8632d5f0541831988265ad8a2b, type: 3}
       propertyPath: m_ReferencePixelsPerUnit
       value: 16
       objectReference: {fileID: 0}
