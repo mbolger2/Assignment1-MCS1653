@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject health3;
     public GameObject health4;
 
+    [Header("The Players GameObject")]
+    public GameObject player;
+
     // The health counter
     public int health;
 

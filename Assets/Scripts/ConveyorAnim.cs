@@ -9,7 +9,12 @@ public class ConveyorAnim : MonoBehaviour
     public static ConveyorAnim SharedInstance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
+    public GameObject spawnPoint;
     public int amountToPool;
+
+  
+    float spawnTime = 0.0f;
+
 
     void Awake()
     {
@@ -38,5 +43,22 @@ public class ConveyorAnim : MonoBehaviour
             }
         }
         return null;
+    }
+
+    void Update()
+    {
+        spawnTime += Time.deltaTime;
+
+        if (spawnTime >= 3f)
+        {
+            GameObject barrel = ConveyorAnim.SharedInstance.GetPooledObject();
+            if (barrel != null)
+            {
+                barrel.transform.position = spawnPoint.transform.position;
+                barrel.SetActive(true);
+            }
+
+            spawnTime = 0.0f;
+        }
     }
 }
