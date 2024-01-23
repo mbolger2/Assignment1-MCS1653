@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
+        Time.timeScale = 1f;
+
         jumpCharge = 0;
 
     }
