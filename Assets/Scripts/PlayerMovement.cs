@@ -33,12 +33,16 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jumpSound;
     public AudioSource jumpSoundSource;
 
+    [Header("Respawn Point")]
+    public Vector2 respawnPoint = new Vector2(-7.61000013f, 0.550000012f);
+
     // Start is called before the first frame update
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
         jumpCharge = 0;
+
     }
 
     // Update is called once per frame
@@ -85,6 +89,11 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCharge = 1;
         }
+
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            transform.position = respawnPoint;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -100,7 +109,12 @@ public class PlayerMovement : MonoBehaviour
         // The player has the key and enters the ending door
         if (collision.gameObject.tag == "Door" && hasKey)
         {
-            SceneManager.LoadScene("winMenu");
+            SceneManager.LoadScene("winMenu1");
+        }
+
+        if (collision.gameObject.tag == "Door2" && hasKey)
+        {
+            SceneManager.LoadScene("winMenu2");
         }
     }
 
